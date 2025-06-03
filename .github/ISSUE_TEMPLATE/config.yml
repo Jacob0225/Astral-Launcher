@@ -1,14 +1,16 @@
 blank_issues_enabled: true
 contact_links:
-  - name: 🫶 Support Portal
-    about: Get support using through our portal.
-    url: https://support.modrinth.com
-  - name: 💬 Chat
-    about: Join our Discord server to chat about Modrinth.
+  - name: Discord
+    about: Ask questions on our Discord Server.
     url: https://discord.modrinth.com
-  - name: 🛣️ Roadmap
+  - name: Roadmap
     about: View our Roadmap. Please do not open issues for items on our roadmap.
     url: https://roadmap.modrinth.com
-  - name: 📚 Documentation
-    about: Useful documentation about Modrinth's API
+  - name: Discussions (Feature requests)
+    about: |
+      Please use Issues for reporting bugs and suggesting enhancements to existing features.
+      Suggestions for new features should be made as a Discussion.
+    url: https://github.com/orgs/modrinth/discussions/categories/feature-requests
+  - name: Documentation
+    about: Useful documentation about Modrinth, its API, and how you can contribute.
     url: https://docs.modrinth.com
