@@ -1,4 +1,6 @@
+![Astral Launcher](https://github.com/user-attachments/assets/85c1a208-c33f-4a34-ba7d-cba88f540a8b)
 # Astral Launcher
+
 A game launcher which can be used as a CLI, GUI, and a library for creating and playing modrinth projects
 
 Astral Launcher aims to provide three components:
