@@ -1,6 +1,6 @@
 //! Minecraft CLI argument logic
-use super::auth::Credentials;
 use crate::launcher::parse_rules;
+use crate::state::Credentials;
 use crate::{
     state::{MemorySettings, WindowSize},
     util::{io::IOError, platform::classpath_separator},
@@ -148,7 +148,6 @@ pub fn get_jvm_arguments(
             parsed_arguments.push(arg);
         }
     }
-    parsed_arguments.push("-Dorg.lwjgl.util.Debug=true".to_string());
 
     Ok(parsed_arguments)
 }

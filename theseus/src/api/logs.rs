@@ -140,8 +140,14 @@ pub async fn get_output_by_filename(
     let logs_folder = DirectoryInfo::profile_logs_dir(profile_subpath).await?;
     let path = logs_folder.join(file_name);
 
-    let credentials: Vec<Credentials> =
-        state.users.read().await.clone().0.into_values().collect();
+    let credentials: Vec<Credentials> = state
+        .users
+        .read()
+        .await
+        .users
+        .clone()
+        .into_values()
+        .collect();
 
     // Load .gz file into String
     if let Some(ext) = path.extension() {
@@ -242,14 +248,6 @@ pub async fn get_latest_log_cursor(
 }
 
 #[tracing::instrument]
-pub async fn get_std_log_cursor(
-    profile_path: ProfilePathId,
-    cursor: u64, // 0 to start at beginning of file
-) -> crate::Result<LatestLogCursor> {
-    get_generic_live_log_cursor(profile_path, "latest_stdout.log", cursor).await
-}
-
-#[tracing::instrument]
 pub async fn get_generic_live_log_cursor(
     profile_path: ProfilePathId,
     log_file_name: &str,
@@ -304,8 +302,14 @@ pub async fn get_generic_live_log_cursor(
     let output = String::from_utf8_lossy(&buffer).to_string(); // Convert to String
     let cursor = cursor + bytes_read as u64; // Update cursor
 
-    let credentials: Vec<Credentials> =
-        state.users.read().await.clone().0.into_values().collect();
+    let credentials: Vec<Credentials> = state
+        .users
+        .read()
+        .await
+        .users
+        .clone()
+        .into_values()
+        .collect();
     let output = CensoredString::censor(output, &credentials);
     Ok(LatestLogCursor {
         cursor,
